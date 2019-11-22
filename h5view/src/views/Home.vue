@@ -72,7 +72,7 @@ export default {
       infoStatus:{
         hasCardInfo:true,
         hasGroupInfo:true,
-        showType:'card'
+        showType:'group'
       },
       cardInfo:{
 
