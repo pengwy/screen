@@ -65,8 +65,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1544" />
-    <option name="y" value="-93" />
+    <option name="x" value="1467" />
+    <option name="y" value="-95" />
     <option name="width" value="1280" />
     <option name="height" value="907" />
   </component>
@@ -182,10 +182,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1544" y="-93" width="1280" height="907" extended-state="0" />
+    <frame x="1467" y="-95" width="1280" height="907" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2374798" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2374798" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -197,7 +197,7 @@
       <window_info anchor="bottom" id="Run" order="0" weight="0.37339744" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Debug" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.39263803" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.39263803" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
