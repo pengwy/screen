@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc4110c1-cae2-4048-a954-16122216366f" name="Default Changelist" comment="" />
+    <list default="true" id="bc4110c1-cae2-4048-a954-16122216366f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/main.dart" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +15,21 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_23" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/lib/main.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+              <folding>
+                <element signature="e#166#186#0" expanded="true" />
+                <element signature="e#1704#2675#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -28,13 +44,13 @@
       <find>addToCache</find>
       <find>_onAddToCache</find>
       <find>evaluateJavascript</find>
-      <find>NavigationControls</find>
-      <find>kNavigationExamplePage</find>
       <find>SampleMenu</find>
       <find>_incrementStoreId</find>
       <find>webViewController</find>
       <find>onWebViewCreated</find>
       <find>_controller</find>
+      <find>NavigationControls</find>
+      <find>kNavigationExamplePage</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/android</dir>
@@ -56,11 +72,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="276" />
-    <option name="y" value="393" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="716" />
+    <option name="height" value="721" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -79,7 +94,13 @@
             <path>
               <item name="screen" type="b2602c69:ProjectViewProjectNode" />
               <item name="screen" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="h5view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="screen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="screen" type="462c0819:PsiDirectoryNode" />
+              <item name="h5view" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -140,7 +161,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="23" width="1280" height="721" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="721" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23990306" />
@@ -151,11 +172,11 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="Build Variants" order="8" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.4765751" visible="true" weight="0.38155803" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.4765751" weight="0.47217807" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.5371567" weight="0.41204438" />
       <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4644588" weight="0.35096154" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.52342486" side_tool="true" visible="true" weight="0.38155803" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.52342486" side_tool="true" visible="true" weight="0.47217807" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32852563" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.67948717" />
@@ -256,17 +277,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="121" column="31" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#8380#0" expanded="true" />
-            <element signature="e#166#186#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter-0.3.15+1/lib/webview_flutter.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -299,6 +309,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="61" column="44" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5view/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter/packages/flutter/lib/src/material/scaffold.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="963" column="24" selection-start-line="963" selection-start-column="9" selection-end-line="963" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter/packages/flutter/lib/src/material/flat_button.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="106" column="19" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+          <folding>
+            <element signature="e#166#186#0" expanded="true" />
+            <element signature="e#1704#2675#0" />
+          </folding>
         </state>
       </provider>
     </entry>

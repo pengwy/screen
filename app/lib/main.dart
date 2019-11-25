@@ -14,13 +14,8 @@ void main() => realRunApp();
 
 void realRunApp() async {
   bool success = await SpUtil.getInstance();
-  print("init-"+success.toString());
   runApp(MaterialApp(home: WebViewExample()));
 }
-
-const String kNavigationExamplePage = '''
-
-''';
 
 class WebViewExample extends StatefulWidget {
   @override
@@ -42,7 +37,8 @@ class _WebViewExampleState extends State<WebViewExample> {
     print('success $storeId');
     return Scaffold(
         appBar: AppBar(
-          brightness: Brightness.dark,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
           title: const Text('大屏幕'),
           // This drop down menu demonstrates that Flutter widgets can be shown over the web view.
           actions: <Widget>[
@@ -74,7 +70,8 @@ class _WebViewExampleState extends State<WebViewExample> {
               print('Page finished loading: $url');
             },
           );
-        })
+        }),
+        backgroundColor:Color.fromRGBO(28, 28, 28, 1)
     );
   }
 
@@ -124,6 +121,8 @@ class NavigationControls extends StatelessWidget {
           children: <Widget>[
             FlatButton(
               child: Text("登出"),
+              textColor:Color.fromRGBO(255,255,255, 1),
+              color:Color.fromRGBO(28, 28, 28, 1),
               onPressed:(){
                 _incrementStoreId(0);
                 controller
