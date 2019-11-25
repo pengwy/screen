@@ -34,7 +34,12 @@
       </div>
     </div>
     <div class="card-con" v-show="infoStatus.showType == 'card'">
-
+      <img src="./bg.png" class="bg">
+      <p class="text-num">
+        已送出{{cardInfo.num}}{{cardInfo.unit}}
+      </p>
+      <img :src="cardInfo.goods_img" class="goods-img">
+      <img :src="cardInfo.mini_code" class="mini-code">
     </div>
     <div class="ft">
       <div class="ft-item" :class="{active:infoStatus.showType == 'group'}" @click="changetype('group')">
@@ -53,12 +58,12 @@ import { apiCardInfo, apiGroupInfo } from "../http/api.js";
 export default {
   name: "home",
   created() {
-    let taht = this;
+    // let taht = this;
     this.storeId = this.$route.query.storeId;
     this.initData();
-    setInterval(function(){
-      taht.initData()
-    },2000)
+    // setInterval(function(){
+    //   taht.initData()
+    // },2000)
   },
   data() {
     return {
@@ -162,6 +167,45 @@ export default {
     }
   }
 }
+.card-con{
+  position: relative;
+  height: 100vh;
+  background-color: #1C1C1C;
+  .bg{
+    display: block;
+    width: 3.3rem;
+    height: 5.15rem;
+    margin: 0 auto;
+  }
+  .text-num{
+    position: absolute;
+    top: 1.11rem;
+    width: 100%;
+    text-align: center;
+    font-size: .16rem;
+    color: #fff;
+    line-height: 1;
+  }
+  .goods-img{
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.1rem;
+    top: 1.46rem;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+  }
+  .mini-code{
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    top: 4.49rem;
+     left: 0.3rem;
+    right: 0;
+  }
+}
+
 .ft{
   position: fixed;
   bottom: 0;
