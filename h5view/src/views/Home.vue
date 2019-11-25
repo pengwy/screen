@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="group-con" v-show="infoStatus.showType == 'group'">
+    <div class="group-con" v-show="infoStatus.showType == 'group' && infoStatus.hasGroupInfo">
       <div class="history">
         <p class="title">微信群聊天记录</p>
         <div class="chat-con">
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="card-con" v-show="infoStatus.showType == 'card'">
+    <div class="card-con" v-show="infoStatus.showType == 'card' && infoStatus.hasCardInfo">
       <img src="./bg.png" class="bg">
       <p class="text-num">
         已送出{{cardInfo.num}}{{cardInfo.unit}}
@@ -41,12 +41,19 @@
       <img :src="cardInfo.goods_img" class="goods-img">
       <img :src="cardInfo.mini_code" class="mini-code">
     </div>
-    <div class="ft">
+    <div class="ft" v-show="infoStatus.hasGroupInfo&&infoStatus.hasCardInfo">
       <div class="ft-item" :class="{active:infoStatus.showType == 'group'}" @click="changetype('group')">
         门店微信群
       </div>
       <div class="ft-item" :class="{active:infoStatus.showType == 'card'}" @click="changetype('card')">
         会员送礼品
+      </div>
+    </div>
+    <div class="blank" v-show="!infoStatus.hasCardInfo && !infoStatus.hasGroupInfo" >
+      <img src="./blank.png" class="img">
+      <p class="text">该门店没有任何活动~~</p>
+      <div class="btn" @click="goLogin">
+          返回登录页
       </div>
     </div>
   </div>
@@ -83,17 +90,27 @@ export default {
       }
     };
   },
+  computed:{},
   methods: {
     initData() {
       apiCardInfo(this.storeId).then(e => {
-        this.cardInfo = e.data
+        if(e.status){
+          this.cardInfo = e.data
+        }
+        this.infoStatus.hasCardInfo = false
       });
       apiGroupInfo(this.storeId).then(e => {
-        this.groupInfo = e.data
+        if(e.status){
+           this.groupInfo = e.data
+        }
+         this.infoStatus.hasGroupInfo = false
       });
     },
     changetype(type){
       this.infoStatus.showType =type
+    },
+    goLogin(){
+      this.$router.replace({ name: `login`});
     }
   }
 };
@@ -145,9 +162,21 @@ export default {
         margin-bottom: 0.06rem;
       }
       .item-content{
-        padding: 0.12rem;
+        padding: .09rem 0.12rem;
         border-radius: 0.04rem;
         background-color: #fff;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          width: .106rem;
+          height: .106rem;
+          top: 0.13rem;
+          left: -.02rem;
+          background-color: #fff;
+          transform: rotate(45deg);
+          border-radius: 0.02rem;
+        }
       }
     }
   }
@@ -242,5 +271,32 @@ export default {
 }
 .color-y{
   color: #F36E20
+}
+.blank{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 1.28rem;
+  .img{
+    width: 1.01rem;
+    height: 1.01rem;
+    margin-bottom: 0.1rem;
+  }
+  .text{
+    margin-bottom: 0.34rem;
+    color: #666666;
+    font-size: 0.16rem;
+  }
+  .btn{
+    width: 2.7rem;
+    line-height: .45rem;
+    text-align: center;
+    font-size: .19rem;
+    font-weight: 500;
+    border-radius: .05rem;
+    color: #fff;
+    background: #F36E20;
+  }
 }
 </style>

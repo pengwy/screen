@@ -1,4 +1,4 @@
-import { get } from "./http";
+import { get, post } from "./http";
 
 /**
  * 门店会员卡数据
@@ -12,7 +12,7 @@ export const apiCardInfo = p => get(`api/card/info/${p}`);
  * @param {Number} p
  * storeId:门店ID
  */
-export const apiGroupInfo = p => get(`api/group/info/${p}`);
+export const apiGroupInfo = p => post(`api/group/info/${p}`);
 
 /**
  * 登录
