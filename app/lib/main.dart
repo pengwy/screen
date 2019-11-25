@@ -124,58 +124,13 @@ class NavigationControls extends StatelessWidget {
           children: <Widget>[
             FlatButton(
               child: Text("登出"),
-              onPressed: !webViewReady
-                  ? null
-                  : () async {
+              onPressed:(){
                 _incrementStoreId(0);
-//                print('gggggg $controller');
-                if (await controller.canGoBack()) {
-                  controller.goBack();
-                } else {
-                  Scaffold.of(context).showSnackBar(
-                    const SnackBar(content: Text("No back history item")),
-                  );
-                  return;
-                }
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
-              onPressed: !webViewReady
-                  ? null
-                  : () async {
-                if (await controller.canGoBack()) {
-                  controller.goBack();
-                } else {
-                  Scaffold.of(context).showSnackBar(
-                    const SnackBar(content: Text("No back history item")),
-                  );
-                  return;
-                }
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.arrow_forward_ios),
-              onPressed: !webViewReady
-                  ? null
-                  : () async {
-                if (await controller.canGoForward()) {
-                  controller.goForward();
-                } else {
-                  Scaffold.of(context).showSnackBar(
-                    const SnackBar(
-                        content: Text("No forward history item")),
-                  );
-                  return;
-                }
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.replay),
-              onPressed: !webViewReady
-                  ? null
-                  : () {
-                controller.reload();
+                controller
+                    ?.evaluateJavascript('loginOut()')
+                    ?.then((result) {
+                  // You can handle JS result here.
+                });
               },
             ),
           ],

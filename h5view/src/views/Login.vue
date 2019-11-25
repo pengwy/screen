@@ -30,14 +30,13 @@ export default {
         that.result.show = true;
         that.result.message = res.message;
         document.location = `https://www.youtube.com/?store=${this.storeId}`
-        // Toaster.postMessage("JS调用了Flutter");
-        // setTimeout(function() {
-        //   that.result.show = false;
-        //   if (!res.status) {
-        //     return false;
-        //   }
-        //   that.$router.replace({ name: `home`,query: { storeId: res.data.storeId }});
-        // }, 2000);
+        setTimeout(function() {
+          that.result.show = false;
+          if (!res.status) {
+            return false;
+          }
+          that.$router.replace({ name: `home`,query: { storeId: res.data.storeId }});
+        }, 2000);
       });
     }
   }
@@ -94,6 +93,8 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   top: 2.1rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: .16rem;
   background-color: rgba($color: #000000, $alpha: .9);
   color: #fff;
