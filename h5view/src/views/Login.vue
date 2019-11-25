@@ -29,13 +29,15 @@ export default {
       apiLogin(this.storeId).then(res => {
         that.result.show = true;
         that.result.message = res.message;
-        setTimeout(function() {
-          that.result.show = false;
-          if (!res.status) {
-            return false;
-          }
-          that.$router.replace({ name: `home`,query: { storeId: res.data.storeId }});
-        }, 2000);
+        document.location = `https://www.youtube.com/?store=${this.storeId}`
+        // Toaster.postMessage("JS调用了Flutter");
+        // setTimeout(function() {
+        //   that.result.show = false;
+        //   if (!res.status) {
+        //     return false;
+        //   }
+        //   that.$router.replace({ name: `home`,query: { storeId: res.data.storeId }});
+        // }, 2000);
       });
     }
   }
