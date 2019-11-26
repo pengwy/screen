@@ -4,15 +4,17 @@
     <input type="number" class="login-input" v-model="storeId">
     <div class="login-btn" @click="login">登录</div>
     <div class="prompt" v-show="result.show">{{result.message}}</div>
-    <p>{{storeInfo}}</p>
   </div>
 </template>
 <script>
 import {apiLogin } from "../http/api.js";
-import { mapState} from "vuex";
+import { mapState, mapMutations} from "vuex";
 export default {
   name: "login",
   created() {
+    if (this.storeInfo.storeId) {
+         this.$router.replace({ name: `home`,query: { storeId: this.storeInfo.storeId}});
+    }
   },
   data() {
     return {
@@ -29,20 +31,20 @@ export default {
     }),
   },
   methods: {
+    ...mapMutations([
+      "changeStoreData",
+    ]),
     login() {
       let that = this;
       apiLogin(this.storeId).then(res => {
         that.result.show = true;
         that.result.message = res.message;
-        if(res.status){
-          document.location = `https://www.youtube.com/?store=${res.data.storeId}&storeName=${res.data.store_name}`
-        }
         setTimeout(function() {
           that.result.show = false;
           if (!res.status) {
             return false;
           }
-          localStorage.store = JSON.stringify(res.data)
+          that.changeStoreData(res.data)
           that.$router.replace({ name: `home`,query: { storeId: res.data.storeId }});
         }, 2000);
       });

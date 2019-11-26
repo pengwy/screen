@@ -31,20 +31,20 @@ class _WebViewExampleState extends State<WebViewExample> {
   Widget build(BuildContext context) {
     var url = 'https://screen.cw100.com/login';
     int storeId = SpUtil.preferences.getInt('storeId');
-    if (storeId != 0){
+    if (storeId != 0){//赋值
       url = 'https://screen.cw100.com/?storeId=$storeId';
+      titleName = SpUtil.preferences.getString('storeName');
     }
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title:Text(titleName),
-          centerTitle:true,
-          // This drop down menu demonstrates that Flutter widgets can be shown over the web view.
-          actions: <Widget>[
-            NavigationControls(_controller.future),
-          ],
-        ),
+//        appBar: AppBar(
+//          backgroundColor: Colors.transparent,
+//          elevation: 0,
+//          title:Text(titleName),
+//          centerTitle:true,
+//          actions: <Widget>[
+//            NavigationControls(_controller.future),
+//          ],
+//        ),
         // We're using a Builder here so we have a context that is below the Scaffold
         // to allow calling Scaffold.of(context) so we can show a snackbar.
         body: Builder(builder: (BuildContext context) {
@@ -58,21 +58,7 @@ class _WebViewExampleState extends State<WebViewExample> {
               _toasterJavascriptChannel(context),
             ].toSet(),
             navigationDelegate: (NavigationRequest request) {
-              if (request.url.startsWith('https://www.youtube.com/')) {//传递门店参数
-                var id =  request.url.split('=')[1];
-                _incrementStoreId(int.parse(id));
-                setState((){
-                  titleName = '门店';
-                });
-                return NavigationDecision.prevent;
-              }
-              if (request.url.startsWith('https://screen.cw100.com/login')) {//登录页面切换title
-                setState((){
-                  titleName = '登录';
-                });
-                return NavigationDecision.navigate;
-              }
-              return NavigationDecision.navigate;
+
             },
             onPageFinished: (String url) {
               print('Page finished loading: $url');
@@ -93,22 +79,16 @@ class _WebViewExampleState extends State<WebViewExample> {
         });
   }
 }
-//读取SharedPreferences中key为counter的值
-Future<String>_loadStoreId() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  int  storeId = (prefs.getInt('storeId') ?? 0);
-  var url = 'https://screen.cw100.com/login';
-  if (storeId != 0){
-    url = 'https://screen.cw100.com/?storeId=$storeId';
-  }
-  return url;
-}
-//递增写入SharedPreferences中key为counter的值
+//写入storeid
 Future<void>_incrementStoreId(id) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  int counter = id;
-  prefs.setInt('storeId', counter);
+  prefs.setInt('storeId', id);
 }
+Future<void>_inStoreName(String name) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString('storeName', name);
+}
+
 
 class NavigationControls extends StatelessWidget {
   const NavigationControls(this._webViewControllerFuture)
