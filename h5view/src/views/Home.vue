@@ -19,6 +19,7 @@
               <div class="item-content">{{item.content}}</div>
             </div>
           </div>
+          <p class="prompt-text">更多消息请加微信群</p>
         </div>
       </div>
       <div class="qrcode-con">
@@ -57,16 +58,16 @@
 
 <script>
 import { apiCardInfo, apiGroupInfo } from "../http/api.js";
-
+import { mapMutations } from "vuex";
 export default {
   name: "home",
   created() {
-    // let taht = this;
+    let taht = this;
     this.storeId = this.$route.query.storeId;
     this.initData();
-    // setInterval(function(){
-    //   taht.initData()
-    // },2000)
+    setInterval(function(){
+      taht.initData()
+    },1000*60*10)
   },
   data() {
     return {
@@ -86,6 +87,9 @@ export default {
   },
   computed: {},
   methods: {
+    ...mapMutations([
+      "changeStoreData",
+    ]),
     initData() {
       apiCardInfo(this.storeId).then(e => {
         if (e.status) {
@@ -108,6 +112,7 @@ export default {
       this.infoStatus.showType = type;
     },
     goLogin() {
+      this.changeStoreData({storeId:'',store_name:''})
       this.$router.replace({ name: `login` });
     },
     getTime() {
@@ -142,7 +147,7 @@ export default {
       width: 3.3rem;
       padding: 0.14rem 0;
       margin: 0 auto;
-      max-height: 3.7rem;
+      height: 3.7rem;
       background-color: #ededed;
       overflow: scroll;
       border-radius: 0.1rem;
@@ -190,6 +195,13 @@ export default {
           border-radius: 0.02rem;
         }
       }
+    }
+    .prompt-text{
+      font-size: .14rem;
+      line-height: 1;
+      color: #F36E20;
+      text-align: center;
+      padding-bottom: 0.02rem;
     }
   }
   .qrcode-con {

@@ -43,11 +43,11 @@ export default {
     border-top-right-radius: .18rem;
     overflow: hidden;
     background-color: #fff;
-    height: calc(100vh - .4rem);
-    margin-top: .4rem;
+    height: calc(100vh - .45rem);
+    margin-top: .45rem;
 }
 .nav-title{
-  height: .4rem;
+  height: .45rem;
   width: 100%;
   position: fixed;
   top: 0;
@@ -57,6 +57,7 @@ export default {
   color: #fff;
   background-color: #1C1C1C;
   .title{
+    font-weight: 700;
     font-size: .18rem;
   }
   .btn{
