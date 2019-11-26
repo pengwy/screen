@@ -34,13 +34,15 @@ export default {
       apiLogin(this.storeId).then(res => {
         that.result.show = true;
         that.result.message = res.message;
+        if(res.status){
+          document.location = `https://www.youtube.com/?store=${res.data.storeId}&storeName=${res.data.store_name}`
+        }
         setTimeout(function() {
           that.result.show = false;
           if (!res.status) {
             return false;
           }
-          localStorage.store = res.data
-          document.location = `https://www.youtube.com/?store=${this.storeId}&storeName=${res.data.store_name}`
+          localStorage.store = JSON.stringify(res.data)
           that.$router.replace({ name: `home`,query: { storeId: res.data.storeId }});
         }, 2000);
       });
