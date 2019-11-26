@@ -26,6 +26,7 @@ class _WebViewExampleState extends State<WebViewExample> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 
+  String titleName = '登录';
   @override
   Widget build(BuildContext context) {
     var url = 'https://screen.cw100.com/login';
@@ -33,13 +34,12 @@ class _WebViewExampleState extends State<WebViewExample> {
     if (storeId != 0){
       url = 'https://screen.cw100.com/?storeId=$storeId';
     }
-    print('url $url');
-    print('success $storeId');
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: const Text('大屏幕'),
+          title:Text(titleName),
+          centerTitle:true,
           // This drop down menu demonstrates that Flutter widgets can be shown over the web view.
           actions: <Widget>[
             NavigationControls(_controller.future),
@@ -58,12 +58,20 @@ class _WebViewExampleState extends State<WebViewExample> {
               _toasterJavascriptChannel(context),
             ].toSet(),
             navigationDelegate: (NavigationRequest request) {
-              if (request.url.startsWith('https://www.youtube.com/')) {
+              if (request.url.startsWith('https://www.youtube.com/')) {//传递门店参数
                 var id =  request.url.split('=')[1];
                 _incrementStoreId(int.parse(id));
+                setState((){
+                  titleName = '门店';
+                });
                 return NavigationDecision.prevent;
               }
-              print('allowing navigation to $request');
+              if (request.url.startsWith('https://screen.cw100.com/login')) {//登录页面切换title
+                setState((){
+                  titleName = '登录';
+                });
+                return NavigationDecision.navigate;
+              }
               return NavigationDecision.navigate;
             },
             onPageFinished: (String url) {
@@ -120,7 +128,7 @@ class NavigationControls extends StatelessWidget {
         return Row(
           children: <Widget>[
             FlatButton(
-              child: Text("登出"),
+              child: Text("登出",style:TextStyle(fontSize:18),),
               textColor:Color.fromRGBO(255,255,255, 1),
               color:Color.fromRGBO(28, 28, 28, 1),
               onPressed:(){
