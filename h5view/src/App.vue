@@ -48,6 +48,7 @@ export default {
 }
 .nav-title{
   height: .45rem;
+  padding-top: .05rem;
   width: 100%;
   position: fixed;
   top: 0;
