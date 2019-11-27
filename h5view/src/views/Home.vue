@@ -250,10 +250,10 @@ export default {
     right: 0;
   }
   .mini-code {
-    width: 0.4rem;
-    height: 0.4rem;
+    width: 0.6rem;
+    height: 0.6rem;
     position: absolute;
-    top: 4.49rem;
+    top: 4.4rem;
     left: 0.3rem;
     right: 0;
   }
