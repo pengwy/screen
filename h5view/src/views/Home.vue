@@ -8,15 +8,15 @@
             <img class="item-avatar" :src="groupInfo.items[0].avatar">
             <div class="right">
               <p class="item-name">{{groupInfo.items[0].nickname}}</p>
-              <div class="item-content">{{groupInfo.items[0].content}}</div>
+              <div class="item-content" v-html="groupInfo.items[0].content"></div>
             </div>
           </div>
           <p class="time">{{time}}</p>
-          <div class="item" v-for="(item, index) in groupInfo.items" :key="index">
+          <div class="item" v-for="(item, index) in groupInfo.items" :key="index" v-show="index > 0">
             <img class="item-avatar" :src="item.avatar">
             <div class="right">
               <p class="item-name">{{item.nickname}}</p>
-              <div class="item-content">{{item.content}}</div>
+              <div class="item-content" v-html="item.content"></div>
             </div>
           </div>
           <p class="prompt-text">更多消息请加微信群</p>
@@ -179,10 +179,11 @@ export default {
         margin-bottom: 0.06rem;
       }
       .item-content {
+        position: relative;
+        display: inline-block;
         padding: 0.09rem 0.12rem;
         border-radius: 0.04rem;
         background-color: #fff;
-        position: relative;
         &::after {
           content: "";
           position: absolute;
@@ -292,9 +293,7 @@ export default {
     }
   }
 }
-.color-y {
-  color: #f36e20;
-}
+
 .blank {
   display: flex;
   flex-direction: column;

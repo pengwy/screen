@@ -36,6 +36,14 @@ export default {
     ]),
     login() {
       let that = this;
+      if(!that.storeId){
+         that.result.show = true;
+         that.result.message = '门店序号不能为空';
+         setTimeout(function(){
+            that.result.show = false;
+         },2000)
+         return false
+      }
       apiLogin(this.storeId).then(res => {
         that.result.show = true;
         that.result.message = res.message;
