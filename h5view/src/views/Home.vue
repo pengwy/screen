@@ -278,6 +278,7 @@ export default {
     justify-content: center;
     flex: 1;
     color: #fff;
+    font-weight: 700;
     &::after {
       content: "";
       position: absolute;

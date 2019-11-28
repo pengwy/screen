@@ -6,7 +6,7 @@
     </div>
     <div class="out-con" v-show="isShowOutCon">
       <div class="prompt-con">
-        <div class="content">退出登录</div>
+        <div class="content">确认退出登录?</div>
         <div class="ft">
           <span class="ft-item" @click="changeOutcontent(false)">取消</span>
           <span @click="loginOut" class="ft-item color-y">确定</span>
