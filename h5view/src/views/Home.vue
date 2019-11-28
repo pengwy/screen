@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="group-con" v-show="infoStatus.showType == 'group' && infoStatus.hasGroupInfo">
-      <div class="history">
+      <div class="history" v-if="groupInfo.items.length > 0">
         <p class="title">微信群聊天记录</p>
         <div class="chat-con">
           <div class="item">
