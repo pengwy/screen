@@ -184,6 +184,7 @@ export default {
         padding: 0.09rem 0.12rem;
         border-radius: 0.04rem;
         background-color: #fff;
+        word-break: break-all;
         &::after {
           content: "";
           position: absolute;
