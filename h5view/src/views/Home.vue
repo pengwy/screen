@@ -35,6 +35,8 @@
       <p class="text-num">已送出{{cardInfo.num}}{{cardInfo.unit}}</p>
       <img :src="cardInfo.goods_img" class="goods-img">
       <img :src="cardInfo.mini_code" class="mini-code">
+      <p class="prompt-text color-y">微信扫码领礼品</p>
+      <p class="prompt-text">会员专享</p>
     </div>
     <div class="ft" v-show="infoStatus.hasGroupInfo&&infoStatus.hasCardInfo">
       <div
@@ -217,7 +219,7 @@ export default {
     background-color: #ededed;
     overflow: hidden;
     .qrcode {
-      width: 0.6rem;
+      width: 0.7rem;
       margin-right: 0.1rem;
     }
   }
@@ -258,6 +260,17 @@ export default {
     top: 4.4rem;
     left: 0.3rem;
     right: 0;
+  }
+  .prompt-text{
+    position: absolute;
+    top: 4.73rem;
+    left: 1rem;
+    right: 0;
+    font-size: .16rem;
+    line-height: .16rem;
+    &.color-y{
+      top: 4.53rem;
+    }
   }
 }
 
