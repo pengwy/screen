@@ -25,7 +25,7 @@
       <div class="qrcode-con">
         <img :src="groupInfo.qrcode" class="qrcode">
         <div>
-          <p class="color-y">维修扫码加群</p>
+          <p class="color-y">微信扫码加群</p>
           <p>接受业主监督 公开透明交流</p>
         </div>
       </div>
@@ -215,9 +215,9 @@ export default {
     justify-content: center;
     border-radius: 0.1rem;
     background-color: #ededed;
+    overflow: hidden;
     .qrcode {
       width: 0.6rem;
-      height: 0.6rem;
       margin-right: 0.1rem;
     }
   }
