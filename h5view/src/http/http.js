@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://api.cw100.cn/";
+axios.defaults.baseURL = "https://api.cw100.com/";
 /**
  * get方法，对应get请求
  * @param {String} url [请求的url地址]
