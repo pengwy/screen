@@ -5,7 +5,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-void main() => runApp(MaterialApp(home: WebViewExample()));
+import 'package:flutter/services.dart';
+
+void main() => runApp(
+    MaterialApp(home: WebViewExample()));
 
 class WebViewExample extends StatefulWidget {
   @override
@@ -17,6 +20,14 @@ class _WebViewExampleState extends State<WebViewExample> {
       Completer<WebViewController>();
   @override
   Widget build(BuildContext context) {
+    //跳转屏幕
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    // // 竖直方向
+    // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    // // 水平方向
+    // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeLeft]);
+    // // 多方向
+    // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeLeft, DeviceOrientation.portraitUp]);
     return Scaffold(
         body: Builder(builder: (BuildContext context) {
           return WebView(

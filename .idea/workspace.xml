@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc4110c1-cae2-4048-a954-16122216366f" name="Default Changelist" comment="" />
+    <list default="true" id="bc4110c1-cae2-4048-a954-16122216366f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/main.dart" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,8 @@
       <find>_incrementStoreId</find>
       <find>NavigationControls</find>
       <find>android.useAndroidX=true</find>
+      <find>initState</find>
+      <find>setSystemUIOverlayStyle</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/android</dir>
@@ -54,28 +59,28 @@
         <option value="$PROJECT_DIR$/app/android/key.properties" />
         <option value="$PROJECT_DIR$/app/lib/unit.dart" />
         <option value="$PROJECT_DIR$/h5view/src/views/Login.vue" />
-        <option value="$PROJECT_DIR$/app/lib/main.dart" />
         <option value="$PROJECT_DIR$/app/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/.android/gradle.properties" />
         <option value="$PROJECT_DIR$/app/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/app/lib/main.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="110" />
-    <option name="y" value="48" />
-    <option name="width" value="1280" />
-    <option name="height" value="716" />
+    <option name="x" value="107" />
+    <option name="y" value="23" />
+    <option name="width" value="1281" />
+    <option name="height" value="709" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -130,10 +135,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1280" height="716" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24313408" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24313408" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -141,11 +146,11 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="Build Variants" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.5024233" weight="0.53044873" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.5016155" weight="0.4935065" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.5371567" weight="0.41204438" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4628433" visible="true" weight="0.14102565" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.49757674" side_tool="true" weight="0.21153846" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.4628433" visible="true" weight="0.33387357" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.4983845" side_tool="true" weight="0.38636363" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32852563" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.67948717" />
@@ -295,16 +300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#166#186#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -334,6 +329,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter/packages/flutter/lib/src/services/system_chrome.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="390" column="42" lean-forward="true" selection-start-line="390" selection-start-column="42" selection-end-line="390" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#1120#0" expanded="true" />
+            <element signature="e#166#186#0" expanded="true" />
+            <element signature="e#686#1109#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
         </state>
       </provider>
     </entry>
